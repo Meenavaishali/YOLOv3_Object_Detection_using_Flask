@@ -1,0 +1,29 @@
+# Backend Frameworks (you can choose either FastAPI or Flask)
+# fastapi==0.85.0           # Backend framework option 1
+#flask==2.0.2              # Backend framework option 2
+# uvicorn[standard]==0.18.3  # ASGI server for FastAPI (not required for Flask)
+flask==3.0.3
+flask-cors==3.0.10
+werkzeug==3.0.3
+
+# Machine learning and YOLO dependencies
+# torch==1.10.1              # PyTorch for YOLO
+# torchvision==0.11.2        # Utilities for image processing in PyTorch
+opencv-python==4.5.5.62    # OpenCV for image handling
+
+# Additional YOLO utilities and dependencies
+numpy==1.21.5              # For numerical operations
+pillow==9.0.1              # Image handling
+# matplotlib==3.5.1          # For visualization (optional)
+# pydantic==1.8.2            # Data validation (used by FastAPI)
+tqdm==4.62.3               # For progress bars
+requests==2.26.0           # HTTP requests (optional for API testing)
+
+# Optional Docker SDK for Python integration
+docker==5.0.3
+
+# Optional: Logging for better debugging
+loguru==0.6.0           # Helpful for logging during development
+
+
+
