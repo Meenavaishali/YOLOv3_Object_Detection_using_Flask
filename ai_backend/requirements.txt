@@ -1,0 +1,13 @@
+# Backend Frameworks
+flask==3.0.3
+flask-cors==3.0.10
+werkzeug==3.0.3
+opencv-python==4.5.5.62    # OpenCV for image handling
+numpy==1.21.5              # For numerical operations
+requests==2.26.0           # HTTP requests (optional for API testing)
+docker==5.0.3
+loguru==0.6.0
+
+
+
+
