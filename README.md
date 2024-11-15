@@ -63,10 +63,14 @@ In addition to the weights, you will also need the `yolov3.cfg` configuration fi
 
 3. **Tag and Push Docker Image**:
    - After building the Docker image, tag it with your Docker Hub repository name.
+     `docker tag <local_image_name>:<local_tag> <dockerhub_username>/<repository_name>:<tag>`
+
    - Push the image to Docker Hub.
+     `docker push <dockerhub_username>/<repository_name>:<tag>`
 
 4. **Pulling the Image from Docker Hub** (Optional):
    - To use this image on another system, pull it directly from Docker Hub.
+     `docker pull <username>/<repository>:<tag>`
 
 ## Project Structure
 
