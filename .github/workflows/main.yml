@@ -60,8 +60,8 @@ jobs:
     - name: push the docker image
       id: push-docker-image
       run: |
-        docker push meenavaishali/yolov3_object_detection_using_flask_ai_backend
-        docker push meenavaishali/yolov3_object_detection_using_flask_ui_backend
+        docker push yolov3_object_detection_using_flask_ai_backend
+        docker push yolov3_object_detection_using_flask_ui_backend
       # uses: docker/build-push-action@v5
       # with:
       #   context: 
