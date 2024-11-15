@@ -1,9 +1,9 @@
-name: Build and Push Docker Image
+name: Build and Push Docker Images
 
 on:
   push:
     branches:
-      - main  # Adjust the branch name as needed
+      - main  # Trigger on push to the main branch
 
 jobs:
   build-and-push:
@@ -19,13 +19,16 @@ jobs:
         username: ${{ secrets.DOCKER_USERNAME }}
         password: ${{ secrets.DOCKER_PASSWORD }}
 
-    - name: Set up Docker Buildx
-      uses: docker/setup-buildx-action@v2
-
-    - name: Build and Push Docker Image
+    - name: Build and Push `ui_backend` Image
       uses: docker/build-push-action@v4
       with:
-        context: .
-        file: ./docker-compose.yml
+        context: ./ui_backend
         push: true
-        tags: ${{ secrets.DOCKER_USERNAME }}/your-image-name:latest
+        tags: ${{ secrets.DOCKER_USERNAME }}/yolov3_objectdetection:ui_backend
+
+    - name: Build and Push `ai_backend` Image
+      uses: docker/build-push-action@v4
+      with:
+        context: ./ai_backend
+        push: true
+        tags: ${{ secrets.DOCKER_USERNAME }}/yolov3_objectdetection:ai_backend
