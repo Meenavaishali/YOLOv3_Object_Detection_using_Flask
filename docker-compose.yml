@@ -10,10 +10,13 @@ services:
     environment:
       - BACKEND_URL=ai_backend # Update the URL to use the service name
     volumes:
-      - ./ai_backend/output:/app/ai_backend/output
+      - ./output:/app/output
 
   ai_backend:
     image: meenavaishali/yolov3_objectdetection:ai_backend
     ports:
       - "5001:5001"
 
+volumes:
+  output:
+    driver: local

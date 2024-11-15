@@ -1,0 +1,52 @@
+[
+    {
+        "bounding_box": {
+            "height": 320,
+            "width": 362,
+            "x": 417,
+            "y": 256
+        },
+        "class": "dog",
+        "confidence": 0.9974146485328674
+    },
+    {
+        "bounding_box": {
+            "height": 368,
+            "width": 631,
+            "x": 558,
+            "y": 334
+        },
+        "class": "laptop",
+        "confidence": 0.994642972946167
+    },
+    {
+        "bounding_box": {
+            "height": 598,
+            "width": 651,
+            "x": 95,
+            "y": 19
+        },
+        "class": "person",
+        "confidence": 0.9931944012641907
+    },
+    {
+        "bounding_box": {
+            "height": 88,
+            "width": 241,
+            "x": 337,
+            "y": 564
+        },
+        "class": "bowl",
+        "confidence": 0.9576433897018433
+    },
+    {
+        "bounding_box": {
+            "height": 140,
+            "width": 127,
+            "x": 11,
+            "y": 518
+        },
+        "class": "cup",
+        "confidence": 0.7792875170707703
+    }
+]
