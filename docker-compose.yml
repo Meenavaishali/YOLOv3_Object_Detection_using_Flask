@@ -10,7 +10,7 @@ services:
     environment:
       - BACKEND_URL=ai_backend
     volumes:
-      - ./output:/app/output
+      - ./ai_backend/output:/app/ai_backend/output
 
   ai_backend:
     image: meenavaishali/yolov3_objectdetection:ai_backend
