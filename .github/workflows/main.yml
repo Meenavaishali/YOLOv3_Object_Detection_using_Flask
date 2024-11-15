@@ -5,9 +5,7 @@ on:
     branches: [ main ]
 
 env:
-  # Use docker.io for Docker Hub if empty
   REGISTRY: docker.io
-  # github.repository as <account>/<repo>
   IMAGE_NAME: ${{ github.repository }}
 
 jobs:
@@ -20,22 +18,13 @@ jobs:
       run: |
         sudo apt-get update
         sudo apt-get install -y docker-compose
-    - name: Build the Docker image
-      run: docker-compose build --no-cache --force-rm 
-
-  test:
-    runs-on: ubuntu-latest
-    steps:
-    - uses: actions/checkout@v2
-    - name: Install Docker Compose
+    - name: Build the Docker images
       run: |
-        sudo apt-get update
-        sudo apt-get install -y docker-compose
-    - name: Test the Docker image
-      run: docker-compose up -d 
+        docker-compose build --no-cache --force-rm
+        docker tag ui_backend ${REGISTRY}/${{ secrets.DOCKER_USERNAME }}/ui_backend:latest
+        docker tag ai_backend ${REGISTRY}/${{ secrets.DOCKER_USERNAME }}/ai_backend:latest
 
   push_to_registry:
-    name: Push Docker image to Docker Hub
     runs-on: ubuntu-latest
     steps:
     - name: Check out the repo
@@ -50,21 +39,7 @@ jobs:
         username: ${{ secrets.DOCKER_USERNAME }}
         password: ${{ secrets.DOCKER_PASSWORD }}
 
-    - name: Extract metadata (tags, labels) for Docker
-      id: meta
-      uses: docker/metadata-action@v4
-      with:
-        images: ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}
-
-    # - name: Build and push Docker image
-    - name: push the docker image
-      id: push-docker-image
+    - name: Push Docker images
       run: |
-        docker push yolov3_object_detection_using_flask_ai_backend
-        docker push yolov3_object_detection_using_flask_ui_backend
-      # uses: docker/build-push-action@v5
-      # with:
-      #   context: 
-      #   push: true
-      #   tags: ${{ steps.meta.outputs.tags }}
-      #   labels: ${{ steps.meta.outputs.labels }}
+        docker push ${REGISTRY}/${{ secrets.DOCKER_USERNAME }}/ui_backend:latest
+        docker push ${REGISTRY}/${{ secrets.DOCKER_USERNAME }}/ai_backend:latest
