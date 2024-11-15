@@ -2,17 +2,18 @@ version: '3.8'
 
 services:
   ui_backend:
-    build: ./ui_backend
+    image: meenavaishali/yolov3_objectdetection:ui_backend
     ports:
       - "5000:5000"
     depends_on:
       - ai_backend
     environment:
-      - BACKEND_URL=ai_backend
+      - BACKEND_URL=ai_backend # Update the URL to use the service name
     volumes:
       - ./ai_backend/output:/app/ai_backend/output
 
   ai_backend:
-    build: ./ai_backend
+    image: meenavaishali/yolov3_objectdetection:ai_backend
     ports:
       - "5001:5001"
+
