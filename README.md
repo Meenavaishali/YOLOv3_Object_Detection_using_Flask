@@ -13,7 +13,6 @@ This project implements an object detection microservice with two main component
 - Usage
 - Deliverables
 - References
-- Conclution
 
 ## Overview
 
