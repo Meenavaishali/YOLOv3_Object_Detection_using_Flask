@@ -1,4 +1,5 @@
 # YOLOv3_Object_Detection_using_Flask
+![image](https://github.com/user-attachments/assets/61eb97de-cf13-476f-ae6c-ab696f5199e2)
 
 
 This project implements an object detection microservice with two main components: a UI backend service and an AI backend service. The UI allows users to upload images, and the AI backend performs object detection using the YOLOv3 model, returning results in JSON format. The components are containerized using Docker and deployed in a way that allows for easy setup and scalability.
