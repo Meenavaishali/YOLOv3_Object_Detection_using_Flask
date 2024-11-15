@@ -1,0 +1,62 @@
+[
+    {
+        "bounding_box": {
+            "height": 2309,
+            "width": 1171,
+            "x": 2948,
+            "y": 339
+        },
+        "class": "person",
+        "confidence": 0.999585747718811
+    },
+    {
+        "bounding_box": {
+            "height": 2984,
+            "width": 1285,
+            "x": 1551,
+            "y": 295
+        },
+        "class": "person",
+        "confidence": 0.9980480670928955
+    },
+    {
+        "bounding_box": {
+            "height": 3300,
+            "width": 2614,
+            "x": 3235,
+            "y": 309
+        },
+        "class": "person",
+        "confidence": 0.9975865483283997
+    },
+    {
+        "bounding_box": {
+            "height": 2862,
+            "width": 1272,
+            "x": 193,
+            "y": 499
+        },
+        "class": "person",
+        "confidence": 0.9870021939277649
+    },
+    {
+        "bounding_box": {
+            "height": 1686,
+            "width": 1299,
+            "x": 4478,
+            "y": 1837
+        },
+        "class": "chair",
+        "confidence": 0.975271463394165
+    },
+    {
+        "bounding_box": {
+            "height": 350,
+            "width": 494,
+            "x": 4260,
+            "y": 1755
+        },
+        "class": "chair",
+        "confidence": 0.545244574546814
+    }
+]
