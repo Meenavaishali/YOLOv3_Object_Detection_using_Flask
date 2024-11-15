@@ -1,0 +1,112 @@
+[
+    {
+        "bounding_box": {
+            "height": 46,
+            "width": 69,
+            "x": 409,
+            "y": 264
+        },
+        "class": "car",
+        "confidence": 0.9983793497085571
+    },
+    {
+        "bounding_box": {
+            "height": 60,
+            "width": 93,
+            "x": 470,
+            "y": 262
+        },
+        "class": "car",
+        "confidence": 0.9922260046005249
+    },
+    {
+        "bounding_box": {
+            "height": 51,
+            "width": 62,
+            "x": 535,
+            "y": 257
+        },
+        "class": "car",
+        "confidence": 0.982033908367157
+    },
+    {
+        "bounding_box": {
+            "height": 42,
+            "width": 57,
+            "x": 81,
+            "y": 253
+        },
+        "class": "car",
+        "confidence": 0.9807389378547668
+    },
+    {
+        "bounding_box": {
+            "height": 33,
+            "width": 17,
+            "x": 520,
+            "y": 184
+        },
+        "class": "traffic light",
+        "confidence": 0.9565244317054749
+    },
+    {
+        "bounding_box": {
+            "height": 53,
+            "width": 68,
+            "x": 256,
+            "y": 252
+        },
+        "class": "car",
+        "confidence": 0.9450891017913818
+    },
+    {
+        "bounding_box": {
+            "height": 18,
+            "width": 11,
+            "x": 368,
+            "y": 206
+        },
+        "class": "traffic light",
+        "confidence": 0.8543657064437866
+    },
+    {
+        "bounding_box": {
+            "height": 16,
+            "width": 39,
+            "x": 268,
+            "y": 125
+        },
+        "class": "traffic light",
+        "confidence": 0.8400030732154846
+    },
+    {
+        "bounding_box": {
+            "height": 25,
+            "width": 25,
+            "x": 119,
+            "y": 247
+        },
+        "class": "car",
+        "confidence": 0.8034316301345825
+    },
+    {
+        "bounding_box": {
+            "height": 21,
+            "width": 46,
+            "x": 67,
+            "y": 99
+        },
+        "class": "traffic light",
+        "confidence": 0.7991887927055359
+    },
+    {
+        "bounding_box": {
+            "height": 20,
+            "width": 9,
+            "x": 174,
+            "y": 205
+        },
+        "class": "traffic light",
+        "confidence": 0.7563799023628235
+    }
+]
