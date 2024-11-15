@@ -35,7 +35,7 @@ To use YOLOv3 for object detection, follow these steps:
 
 1. Go to the [YOLO website](https://pjreddie.com/darknet/yolo/).
 2. Click on "yolov3.weights" to download the model weights.
-3. Place the `yolov3.weights` file in the `ai_backend/model` folder in your project.
+3. Place the `yolov3.weights` file in the `ai_backend/model` folder in your project. [NOTE: As per git limit as 100 MB, Couldn't commit the file here]
 
 In addition to the weights, you will also need the `yolov3.cfg` configuration file and the `coco.names` file, which contains class labels for the objects YOLO detects.
 
