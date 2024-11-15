@@ -48,12 +48,12 @@ def upload():
             return jsonify({"error": "Invalid JSON response from prediction service"}), 500
 
         # Define the path to 'ai_backend/output' and create it if running locally
-        if not os.path.exists('../ai_backend/output'):
-            os.makedirs('../ai_backend/output', exist_ok=True)
+        if not os.path.exists('./ai_backend/output'):
+            os.makedirs('./ai_backend/output', exist_ok=True)
 
         try:
             # Save the detections as a JSON file in the 'output' directory in 'ai_backend'
-            output_json_path = os.path.join('../ai_backend/output', f'{file_name}_detections.json')
+            output_json_path = os.path.join('./ai_backend/output', f'{file_name}_detections.json')
             with open(output_json_path, 'w') as json_file:
                 json.dump(detections, json_file, indent=4)
         except Exception as e:
@@ -69,7 +69,7 @@ def upload():
 @app.route('/output/<filename>')
 def serve_output(filename):
     # Serve the processed image from the output folder
-    return send_from_directory('./output', filename)
+    return send_from_directory('./ai_backend/output', filename)
 
 
 if __name__ == "__main__":
