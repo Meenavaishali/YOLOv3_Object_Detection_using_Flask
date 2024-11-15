@@ -59,7 +59,7 @@ jobs:
     # - name: Build and push Docker image
     - name: push the docker image
       id: push-docker-image
-      run: docker push ${{secrets.DOCKERHUB_USERNAME}}/${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}
+      run: docker push meenavaishali/yolov3_objectdetection:ai_backend
       # uses: docker/build-push-action@v5
       # with:
       #   context: 
