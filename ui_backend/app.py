@@ -8,6 +8,9 @@ import json
 
 app = Flask(__name__, template_folder="templates", static_folder="output")
 
+# Get the base output directory path based on the environment
+output_dir = os.getenv("OUTPUT_DIR", "../output")  # Default to './output' for local, set in Docker for containerized environment
+
 @app.route('/')
 def index():
     return render_template("upload.html")
@@ -47,18 +50,18 @@ def upload():
         except ValueError:
             return jsonify({"error": "Invalid JSON response from prediction service"}), 500
 
-        # Define the path to 'ai_backend/output' and create it if running locally
-        if not os.path.exists('../output'):
-            os.makedirs('../output', exist_ok=True)
+        # Ensure output directory exists
+        if not os.path.exists(output_dir):
+            os.makedirs(output_dir, exist_ok=True)
 
         try:
-            # Save the detections as a JSON file in the 'output' directory in 'ai_backend'
-            output_json_path = os.path.join('../output', f'{file_name}_detections.json')
+            # Save the detections as a JSON file in the 'output' directory
+            output_json_path = os.path.join(output_dir, f'{file_name}_detections.json')
             with open(output_json_path, 'w') as json_file:
                 json.dump(detections, json_file, indent=4)
 
             # Save the processed image in the 'output' directory
-            output_image_path = os.path.join('../output', f'{file_name}_processed.png')
+            output_image_path = os.path.join(output_dir, f'{file_name}_processed.png')
             try:
                 img_data = base64.b64decode(img_base64)
                 image = Image.open(BytesIO(img_data))
@@ -80,7 +83,7 @@ def upload():
 @app.route('/output/<filename>')
 def serve_output(filename):
     # Serve the processed image from the output folder
-    return send_from_directory('../output', filename)
+    return send_from_directory(output_dir, filename)
 
 
 if __name__ == "__main__":
